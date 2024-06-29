@@ -1,4 +1,4 @@
-export interface ResponsePurchaseInfo {
+export interface ResponsePurchaseInfo {//boleta
   Id: number;
   Purchase_Date: Date;
   ProductId: number;

@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthServiceService {
-  private apiUrl = 'http://localhost:5023/auth';
+  private apiUrl = 'http://localhost:5023/api/auth';
   private tokenKey: string = 'tokenKey';
 
 
