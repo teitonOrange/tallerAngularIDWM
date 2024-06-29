@@ -1,0 +1,21 @@
+:root {
+  --form-bg-color: #7289b6;
+  --hr-color: #b58890;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--form-bg-color);
+}
+
+hr {
+  background-color: var(--hr-color);
+  height: 5px;
+}

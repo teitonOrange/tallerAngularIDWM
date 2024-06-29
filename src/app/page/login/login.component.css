@@ -1,0 +1,26 @@
+:root {
+  --login-bg-color: #9c7a7e;
+  --form-bg-color: #5e3030;
+  --hr-color: #D90429;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--login-bg-color);
+  overflow: hidden;
+}
+
+.form {
+  width: auto;
+  padding: 40px;
+  background-color: var(--form-bg-color);
+  border-radius: 12px;
+}
+
+hr {
+  background-color: var(--hr-color);
+  height: 5px;
+}
