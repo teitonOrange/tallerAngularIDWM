@@ -1,62 +1,61 @@
 <div class="flex justify-center items-center bg-yellow-500 min-h-screen" >
 	<div class="lg:w-2/3 md:w-1/2 w-full mx-4 my-8">
 	  <form [formGroup]="regiterFrom" (ngSubmit)="onSubmit()" class="bg-white p-6 md:p-10 rounded-lg shadow-lg">
-		<h1 class="text-center text-2xl mb-6 text-gray-600 font-bold font-sans">Registro de usuario</h1>
-  
-		<div>
-		  <label class="text-gray-800 font-semibold block my-3 text-md" for="rut">RUT</label>
-		  <input formControlName="Rut" class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" id="rut" placeholder="12345678-9" />
-		  <div *ngIf="isInvalid('Rut')" class="text-red-500 text-sm mt-1">Ingrese un RUT válido</div>
-		</div>
-  
-		<div>
-		  <label class="text-gray-800 font-semibold block my-3 text-md" for="name">Nombre</label>
-		  <input formControlName="Name" class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" id="name" placeholder="Francisco" />
-		  <div *ngIf="isInvalid('Name')" class="text-red-500 text-sm mt-1">Ingrese un nombre valido</div>
-		</div>
-  
-		<div>
-		  <label class="text-gray-800 font-semibold block my-3 text-md" for="Birthday">Fecha de nacimiento</label>
-		  <input formControlName="Birthday" class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="date" id="Birthday" />
-		  <div *ngIf="isInvalid('Birthday')" class="text-red-500 text-sm mt-1">Ingrese una fecha de nacimiento valida</div>
-		</div>
-  
-		<div>
-		  <label class="text-gray-800 font-semibold block my-3 text-md" for="email">Email</label>
-		  <input formControlName="Email" class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" id="email" placeholder="direccion@email.com" />
-		  <div *ngIf="isInvalid('Email')" class="text-red-500 text-sm mt-1">Ingrese email valido</div>
+		  <h1 class="text-center text-2xl mb-6 text-gray-600 font-bold font-sans">Registro de usuario</h1>
 
-		</div>
-  
-		<div>
-		  <label class="text-gray-800 font-semibold block my-3 text-md" for="generId">Género</label>
-		  <select id="options" formControlName="GenderId" class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none">
-			<option *ngFor="let option of options" [value]="options.indexOf(option) + 1">{{ option }}</option>
-		  </select>
-		  <div *ngIf="isInvalid('GenderId')" class="text-red-500 text-sm mt-1">Seleccione un género</div>
+      <div>
+        <label class="text-gray-800 font-semibold block my-3 text-md" for="rut">RUT</label>
+        <input formControlName="Rut" class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" id="rut" placeholder="12345678-9" />
+        <div *ngIf="isInvalid('Rut')" class="text-red-500 text-sm mt-1">Ingrese un RUT válido</div>
+      </div>
 
-		</div>
-  
-		<div>
-		  <label class="text-gray-800 font-semibold block my-3 text-md" for="Password">Contraseña</label>
-		  <input formControlName="Password" class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="password" id="password" placeholder="Contraseña" />
-		  <div *ngIf="isInvalid('Password')" class="text-red-500 text-sm mt-1">
-			La contraseña debe tener al menos 8 caracteres y contener números y letras
-		  </div>
-		</div>
-  
-		<div>
-		  <label class="text-gray-800 font-semibold block my-3 text-md" for="ConfirmPassword">Confirmar contraseña</label>
-		  <input formControlName="ConfirmPassword" class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="password" id="ConfirmPassword" placeholder="Confirmar contraseña" />
-		  <div *ngIf="regiterFrom.hasError('mismatch')" class="text-red-500 text-sm mt-1">Las contraseñas no coinciden</div>
+      <div>
+        <label class="text-gray-800 font-semibold block my-3 text-md" for="name">Nombre</label>
+        <input formControlName="Name" class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" id="name" placeholder="Francisco" />
+        <div *ngIf="isInvalid('Name')" class="text-red-500 text-sm mt-1">Ingrese un nombre valido</div>
+      </div>
 
-		</div>
-  
-		<button type="submit" class="w-full mt-6 bg-indigo-600 rounded-lg px-4 py-2 text-lg text-white tracking-wide font-semibold font-sans">Registrar</button>
-		<button (click)="backToLogin()" type="button" class="w-full mt-6 mb-3 bg-indigo-100 rounded-lg px-4 py-2 text-lg text-gray-800 tracking-wide font-semibold font-sans">Volver</button>
+      <div>
+        <label class="text-gray-800 font-semibold block my-3 text-md" for="Birthday">Fecha de nacimiento</label>
+        <input formControlName="Birthday" class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="date" id="Birthday" />
+        <div *ngIf="isInvalid('Birthday')" class="text-red-500 text-sm mt-1">Ingrese una fecha de nacimiento valida</div>
+      </div>
+
+      <div>
+        <label class="text-gray-800 font-semibold block my-3 text-md" for="email">Email</label>
+        <input formControlName="Email" class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" id="email" placeholder="direccion@email.com" />
+        <div *ngIf="isInvalid('Email')" class="text-red-500 text-sm mt-1">Ingrese email valido</div>
+
+      </div>
+
+      <div>
+        <label class="text-gray-800 font-semibold block my-3 text-md" for="generId">Género</label>
+        <select id="options" formControlName="GenderId" class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none">
+        <option *ngFor="let option of options" [value]="options.indexOf(option) + 1">{{ option }}</option>
+        </select>
+        <div *ngIf="isInvalid('GenderId')" class="text-red-500 text-sm mt-1">Seleccione un género</div>
+
+      </div>
+
+      <div>
+        <label class="text-gray-800 font-semibold block my-3 text-md" for="Password">Contraseña</label>
+        <input formControlName="Password" class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="password" id="password" placeholder="Contraseña" />
+        <div *ngIf="isInvalid('Password')" class="text-red-500 text-sm mt-1">
+        La contraseña debe tener al menos 8 caracteres y contener números y letras
+        </div>
+      </div>
+
+      <div>
+        <label class="text-gray-800 font-semibold block my-3 text-md" for="ConfirmPassword">Confirmar contraseña</label>
+        <input formControlName="ConfirmPassword" class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="password" id="ConfirmPassword" placeholder="Confirmar contraseña" />
+        <div *ngIf="regiterFrom.hasError('mismatch')" class="text-red-500 text-sm mt-1">Las contraseñas no coinciden</div>
+
+      </div>
+
+		  <button (click)="onSubmit()" type="button"class="w-full mt-6 bg-indigo-600 rounded-lg px-4 py-2 text-lg text-white tracking-wide font-semibold font-sans">Registrar</button>
+		  <button (click)="backToLogin()" type="button" class="w-full mt-6 mb-3 bg-indigo-100 rounded-lg px-4 py-2 text-lg text-gray-800 tracking-wide font-semibold font-sans">Volver</button>
 	  </form>
 	</div>
-	
-  </div>
- 
-  
+
+</div>
+

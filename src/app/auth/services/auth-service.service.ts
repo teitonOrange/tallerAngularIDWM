@@ -28,6 +28,7 @@ export class AuthServiceService {
   }
   getUserId(): number | null {
     const userId = localStorage.getItem(this.tokenKey);
+    console.log(userId);
     return userId ? parseInt(userId) : null;
   }
 

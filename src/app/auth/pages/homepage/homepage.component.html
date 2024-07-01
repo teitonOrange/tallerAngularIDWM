@@ -18,13 +18,13 @@
                 <!--Start logo -->
                 <div class="flex justify-center">
                   <div class="w-14 h-14 rounded-full bg-gray-300 border-2 border-white mt-2">
-                    <img 
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVxhAxJ4D7MOeTTj6kR9PBeZonW5HM7giKjTbEmR-HMBwf3G1VqGnlwpO1kWrdyIZu8_U&usqp=CAU" 
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVxhAxJ4D7MOeTTj6kR9PBeZonW5HM7giKjTbEmR-HMBwf3G1VqGnlwpO1kWrdyIZu8_U&usqp=CAU"
                      class="rounded-full w-auto"
                     />
                   </div>
                 </div>
-                
+
                 <!--End logo -->
                 <!--Start NavItem -->
                 <div>
@@ -33,7 +33,7 @@
                       >
                       <i class="fas fa-align-left fa-sm text-white"></i>
                     </li>
-                    <li class="mb-3 p-2 rounded-md flex items-center justify-center bg-pink-400 cursor-pointer">
+                    <li class="mb-3 p-2 rounded-md flex items-center justify-center bg-pink-400 cursor-pointer" (click)="navigateToPurchase()">
                       <i class="fas fa-question-circle fa-sm text-white"></i>
                     </li>
                     <li class="mb-3 p-2 rounded-md flex items-center justify-center bg-yellow-400 cursor-pointer">
@@ -48,14 +48,14 @@
             </div>
         </aside>
         <!-- Start Open Menu -->
-        
-        
+
+
         <div class="flex flex-col flex-1 w-full overflow-y-auto">
-           
+
           <main class="relative z-0 flex-1 pb-8 px-6 bg-white">
 
               <div *ngIf="isAdmin()"  class="grid pb-10  mt-4 ">
-                
+
                 <img src="https://www.lifeder.com/wp-content/uploads/2022/03/SOY-ADMIN-MEME-768x515.jpg" alt="Meme" style="display: block; margin-left: auto; margin-right: auto;">
 
               </div>
