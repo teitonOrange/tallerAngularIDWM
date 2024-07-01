@@ -20,11 +20,9 @@ import { PurchaseModule } from './auth/purchase.module';
     FormComponent,
     AppComponent,
     LoginComponent,
-    FormEditComponent,
     TableComponent,
     RegisterComponent,
     FormRegisterComponent,
-
   ],
   imports: [
     HttpClientModule,
@@ -36,7 +34,6 @@ import { PurchaseModule } from './auth/purchase.module';
     SharedModule,
     PurchaseModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
