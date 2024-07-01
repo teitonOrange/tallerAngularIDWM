@@ -8,6 +8,7 @@ import { AuthServiceService } from '../../services/auth-service.service';
 
 import { ResponseGetAllProducts, Product } from '../../interfaces/ResponseGetAllProducts';
 import { Purchase } from '../../interfaces/ResponsePurchase';
+import { ListProductComponent } from '../../components/list-product/list-product.component';
 
 @Component({
   selector: 'app-purchase',//colocar esto en listPAge.html
@@ -17,5 +18,4 @@ import { Purchase } from '../../interfaces/ResponsePurchase';
 export class PurchaseComponent  {
 
 
-  // Resto del código
 }

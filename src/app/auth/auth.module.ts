@@ -30,7 +30,8 @@ import { ListUserComponent } from './admin/pages/list-user/list-user.component';
     FormsRegisterProductComponent,
     EditProductComponent,
     CreateProductComponent,
-    ListUserComponent
+    ListUserComponent,
+    ListProductComponent
 
   ],
   imports: [

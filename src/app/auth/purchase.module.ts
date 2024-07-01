@@ -13,6 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     // PurchaseComponent,
     ProductComponent,
+    ListProductComponent,
+    PurchaseComponent
 
   ],
   imports: [

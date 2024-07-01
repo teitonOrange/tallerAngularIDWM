@@ -76,4 +76,9 @@ export class HomepageComponent {//homepage de clientes y admin
 
   }
 
+  goToPurchase()
+  {
+    this.router.navigateByUrl('auth/purchase');
+  }
+
 }

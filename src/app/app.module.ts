@@ -23,6 +23,7 @@ import { PurchaseModule } from './auth/purchase.module';
     TableComponent,
     RegisterComponent,
     FormRegisterComponent,
+
   ],
   imports: [
     HttpClientModule,

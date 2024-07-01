@@ -8,6 +8,7 @@ import { AuthServiceService } from '../../services/auth-service.service';
 
 import { ResponseGetAllProducts, Product } from '../../interfaces/ResponseGetAllProducts';
 import { Purchase } from '../../interfaces/ResponsePurchase';
+import { PurchaseComponent } from '../../pages/purchase/purchase.component';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -70,8 +71,8 @@ export class ListProductComponent  implements OnInit{
               console.error(error);
             }
           );
+          console.log(purchaseDto);
         }
-        console.log(purchaseDto);
       }
       this.closeModal();
    }
@@ -85,19 +86,20 @@ export class ListProductComponent  implements OnInit{
     this.loadProducts(this.pageNumber, this.pageSize);
   }
 
+
+//este metodo da 401 porque no funciona con los guards, es necesario comentar en el backend esta linea para que funcione
+// [Authorize(Roles = "Usuario")]
   loadProducts(pageNumber: number, pageSize: number): void {
     this.httpClient.get<ResponseGetAllProducts>(`${this.baseUrl}/available/${pageNumber}/${pageSize}`).subscribe(
       (data) => {
         console.log(data); // Imprime la respuesta completa en la consola
-        if (data) {
-          if (data && data.products) {
-            this.products = data.products.map((product: Product) => ({ ...product, quantity: 1 }));
+
+          if (Array.isArray(data)) {
+            this.products = data.map((products: Product) => ({ ...products, quantity: 1 }));
           } else {
-            console.error("La respuesta no contiene la propiedad 'products'");
+            console.error("La respuestaaaa no contiene la propiedad 'products'");
           }
-        } else {
-          console.error("La respuesta no contiene la propiedad 'products'");
-        }
+
       },
       (error) => {
         console.error(error);

@@ -9,6 +9,7 @@ import { FormsCrudComponent } from './admin/forms/forms-crud/forms-crud.componen
 import { CreateProductComponent } from './admin/pages/create-product/create-product.component';
 import { EditProductComponent } from './admin/pages/edit-product/edit-product.component';
 import { ListUserComponent } from './admin/pages/list-user/list-user.component';
+import { PurchaseComponent } from './pages/purchase/purchase.component';
 
 const routes: Routes = [
   {
@@ -63,6 +64,19 @@ const routes: Routes = [
 
 
 },
+{
+  path:'purchase',
+  component: PurchaseComponent,
+  canActivate:[authGuard],
+  pathMatch:'full'
+},
+{
+  path:'product',
+  component:ListProductComponent,
+  canActivate:[authGuard],
+  pathMatch:'full'
+},
+
 
 
 {
