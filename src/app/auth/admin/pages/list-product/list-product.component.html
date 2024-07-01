@@ -1,0 +1,87 @@
+<section class="p-3" style="background-color: rgb(168, 124, 104);">
+  <div class="mx-auto max-w-screen-xl px-4">
+    
+    
+    <div class="flex justify-between items-center">
+      <button
+      (click)="goToCreateProduct()"
+        type="button"
+        class="text-white mb-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none"
+      >
+        Agregar un producto
+      </button>
+      <div class="ml-4"> <!-- Div para separar el botón de vuelta y el formulario -->
+        <form (ngSubmit)="onSubmit()" class="bg-white shadow-md overflow-hidden rounded-lg flex items-center">
+          <label class="block text-gray-800 font-semibold my-3 text-md px-3" for="query">Filtro</label>
+          <input type="text" [(ngModel)]="query" #queryInput="ngModel" name="query" class="block w-full px-3 py-2 focus:outline-none bg-gray-200" placeholder="Ingrese algún dato">
+          <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg ml-2">Buscar</button>
+          <button (click)="loadProducts()" type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg ml-2">Cancelar</button>
+        </form>
+      </div>
+      <button
+      (click)="backToHome()"
+        type="button"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none"
+      >
+        Volver
+      </button>
+      
+      
+    </div>
+    
+
+    <div class="bg-white relative shadow-md overflow-x-auto rounded-lg">
+      <table class="w-full text-sm text-left text-gray-500 border border-collapse border-black">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+          <tr>
+            <th scope="col" class="px-4 py-3">ID</th>
+            <th scope="col" class="px-4 py-3">Nombre</th>
+            <th scope="col" class="px-4 py-3">Precio</th>
+            <th scope="col" class="px-4 py-3">Stock</th>
+            <th scope="col" class="px-4 py-3">Imagen</th>
+            <th scope="col" class="px-4 py-3">Tipo</th>
+            <th scope="col" class="px-4 py-3">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b bg-gray-100" *ngIf="products.length === 0">
+            <td colspan="7" class="px-4 py-3 text-center text-gray-500">
+              No hay integrantes
+            </td>
+          </tr>
+          <tr class="border-b hover:bg-gray-50" *ngFor="let product of products">
+            <th
+              scope="row"
+              class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap"
+            >
+              {{ product.id }}
+            </th>
+            <td class="px-4 py-3">{{ product.name }}</td>
+            <td class="px-4 py-3">{{ product.price }}</td>
+            <td class="px-4 py-3">{{ product.stock }}</td>
+            <td class="px-4 py-3">
+              <img [src]="product.imgUrl" alt="{{ product.name }}" class="h-12 w-12 object-cover rounded-full">
+            </td>
+            <td class="px-4 py-3">{{ product.productType?.type }}</td>
+            <td class="px-4 py-3 space-x-2">
+              <button
+              (click)="updateProduct(product.id)"
+                type="button"
+                class="py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100"
+              >
+                Editar
+              </button>
+              <button
+              (click)="oneDeleteProduct(product.id)"
+                type="button"
+                class="py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100"
+              >
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
