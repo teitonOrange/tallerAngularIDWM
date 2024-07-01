@@ -13,6 +13,8 @@ import { AuthModule } from './auth/auth.module';
 import { RegisterComponent } from './page/register/register.component';
 import { FormRegisterComponent } from './components/form-register/form-register.component';
 import { SharedModule } from './shared/shared.module';
+import { ListProductComponent } from './auth/components/list-product/list-product.component';
+import { PurchaseModule } from './auth/purchase.module';
 @NgModule({
   declarations: [
     FormComponent,
@@ -21,6 +23,7 @@ import { SharedModule } from './shared/shared.module';
     TableComponent,
     RegisterComponent,
     FormRegisterComponent,
+
   ],
   imports: [
     HttpClientModule,
@@ -30,6 +33,7 @@ import { SharedModule } from './shared/shared.module';
     AuthModule,
     FormsModule,
     SharedModule,
+    PurchaseModule
   ],
   bootstrap: [AppComponent]
 })

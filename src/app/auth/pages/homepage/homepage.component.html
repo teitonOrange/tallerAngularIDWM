@@ -19,13 +19,13 @@
                 <!--Start logo -->
                 <div class="flex justify-center">
                   <div class="w-20 h-14 rounded-full bg-gray-300 border-2 border-white mt-2">
-                    <img 
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVxhAxJ4D7MOeTTj6kR9PBeZonW5HM7giKjTbEmR-HMBwf3G1VqGnlwpO1kWrdyIZu8_U&usqp=CAU" 
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVxhAxJ4D7MOeTTj6kR9PBeZonW5HM7giKjTbEmR-HMBwf3G1VqGnlwpO1kWrdyIZu8_U&usqp=CAU"
                      class="rounded-full w-auto"
                     />
                   </div>
                 </div>
-                
+
                 <!--End logo -->
                 <!--Start NavItem -->
                 <div>
@@ -35,27 +35,28 @@
                   </div>
                     <li (click)="toggleClick()" class="mb-3 p-2 rounded-md flex items-center justify-center bg-blue-400 cursor-pointer">
                       <i class="fas fa-user-circle fa-lg text-white mr-1"></i>
-                      
+
                       <li (click)="toggleClickProduct()" class="mb-3 p-2 rounded-md flex items-center justify-center bg-pink-400 cursor-pointer">
+
                         <i class="fas fa-dollar-sign fa-sm text-white"></i>
                       </li>
-                    
+
                     <li (click)="outToSesion()" class="absolute bottom-0 mb-6 p-4 rounded-full flex items-center bg-white cursor-pointer"
                       style="left: 0; transform: translateX(200%);">
                       <i class="fas fa-power-off fa-sm text-indigo-600"></i>
                     </li>
 
-                  
-                  
-                  
+
+
+
                   </ul>
                 </div>
                 <!--End NavItem -->
             </div>
         </aside>
         <!-- Start Open Menu -->
-        
-        
+
+
         <div   class="relative z-0 flex flex-col flex-1 w-full bg-white bg-no overflow-y-auto">
           <main *ngIf="isDefault()" class="relative z-0 flex-1 pb-8 px-6 bg-white" style="background-image: url(assets/MainMenu.jpg); background-repeat: no-repeat; background-position: center top; background-size: cover;">
             <div class="flex items justify-center h-14">
@@ -76,14 +77,16 @@
                     Cambiar Contraseña
                 </button>
             </div>
-          
+
           </main>
-          
+
           <main *ngIf="isProduct() && isAdmin()"  class="relative z-0 flex-1 pb-8 px-6 bg-white"
           style="background-image: url('assets/store.svg');
           background-repeat: no-repeat;
           background-position: center top;
           background-size: cover;">
+
+
             <div  class="grid pb-10 relative">
               <button (click)="goToEditProducts()" class="absolute  mt-6 left-10 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-4 py-2 rounded-md shadow-md">
                 Editar productos
@@ -91,12 +94,34 @@
             <button (click)="goToUserEdit()" class="absolute  mt-7 right-10 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-4 py-2 rounded-md shadow-md">
                 Editar usuarios
             </button>
-              
+
             </div>
 
           </main>
-          
-          
+
+          <main *ngIf="isProduct() && !isAdmin()"  class="relative z-0 flex-1 pb-8 px-6 bg-white"
+            style="background-image: url('assets/store.svg');
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: cover;">
+
+
+              <div  class="grid pb-10 relative">
+                <button (click)="goToPurchase()" class="absolute  mt-6 left-10 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-4 py-2 rounded-md shadow-md">
+                  Comprar
+              </button>
+
+
+              </div>
+
+
+
+
+          </main>
+
+
         </div>
+
+
     </div>
 </body>

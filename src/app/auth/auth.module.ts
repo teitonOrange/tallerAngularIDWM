@@ -20,7 +20,7 @@ import { ListUserComponent } from './admin/pages/list-user/list-user.component';
 
 @NgModule({
   declarations: [
-    HomepageComponent, 
+    HomepageComponent,
     PerfilEditComponent,
     FormEditComponent,
     PasswordChangerComponent,
@@ -30,8 +30,9 @@ import { ListUserComponent } from './admin/pages/list-user/list-user.component';
     FormsRegisterProductComponent,
     EditProductComponent,
     CreateProductComponent,
-    ListUserComponent
-    
+    ListUserComponent,
+    ListProductComponent
+
   ],
   imports: [
     CommonModule,
@@ -40,7 +41,7 @@ import { ListUserComponent } from './admin/pages/list-user/list-user.component';
     HttpClientModule,
     FormsModule
   ],
-  
+
 
 
 })

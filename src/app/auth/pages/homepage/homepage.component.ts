@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
-export class HomepageComponent {
+export class HomepageComponent {//homepage de clientes y admin
   roles:string[]= [];
   isClick:boolean=false;
   isClickProduct:boolean=false;
@@ -32,7 +32,7 @@ export class HomepageComponent {
     return !this.auth.isadmin();
   }
   toggleClick(): void {
-    this.isClick = !this.isClick; 
+    this.isClick = !this.isClick;
     this.isClickProduct = false;// Cambia el estado de isClick al contrario del estado actual
   }
   toggleClickProduct():void
@@ -75,5 +75,10 @@ export class HomepageComponent {
     return !this.isClick && !this.isClickProduct;
 
   }
-  
+
+  goToPurchase()
+  {
+    this.router.navigateByUrl('auth/purchase');
+  }
+
 }

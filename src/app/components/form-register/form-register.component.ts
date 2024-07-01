@@ -19,7 +19,7 @@ export class FormRegisterComponent {
     private formBuilder: FormBuilder,
     private CloudService:CloudService,
     private router: Router
-  
+
   ){}
   passwordMatchValidator(group: FormGroup) {
     const password = group.get('Password')?.value;
@@ -49,7 +49,7 @@ export class FormRegisterComponent {
     // Obtener el nombre del género seleccionado
     this.regiterFrom.patchValue({ GenderId: this.selectedOption });
   }
-  
+
   onSubmit():void
   {
     if(this.regiterFrom.valid)
@@ -86,6 +86,6 @@ export class FormRegisterComponent {
       }
     });
   }
-  
-  
+
+
 }
