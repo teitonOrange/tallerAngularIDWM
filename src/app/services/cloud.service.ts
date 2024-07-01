@@ -18,8 +18,10 @@ export class CloudService {
       try{
         const data = await firstValueFrom(this.http.post<ResponseApi>(this.baseUrl+'auth/login',form.value));
         if(data.token){
-          this.authService.setRut(data.rut);
+          this.authService.setUserId(data.user.id.toString());
+          this.authService.setRoleId(data.user.role.id.toString());
           this.authService.setToken(data.token);
+          
         }
         return Promise.resolve(data);
       }catch(error:any)

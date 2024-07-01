@@ -18,11 +18,9 @@ import { SharedModule } from './shared/shared.module';
     FormComponent,
     AppComponent,
     LoginComponent,
-    FormEditComponent,
     TableComponent,
     RegisterComponent,
     FormRegisterComponent,
-    
   ],
   imports: [
     HttpClientModule,
@@ -33,7 +31,6 @@ import { SharedModule } from './shared/shared.module';
     FormsModule,
     SharedModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

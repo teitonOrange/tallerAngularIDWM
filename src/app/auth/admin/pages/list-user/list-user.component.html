@@ -1,0 +1,63 @@
+<section class="p-3" style="background-color: rgb(168, 124, 104);">
+  <div class="mx-auto max-w-screen-xl px-4">
+    <div class="flex justify-between items-center mb-4">
+      <button
+        (click)="backToHome()"
+        type="button"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none"
+      >
+        Volver
+      </button>
+      <div class="ml-4"> <!-- Div para separar el botón de vuelta y el formulario -->
+        <form (ngSubmit)="onSubmit()" class="bg-white shadow-md overflow-hidden rounded-lg flex items-center">
+          <label class="block text-gray-800 font-semibold my-3 text-md px-3" for="query">Filtro</label>
+          <input type="text" [(ngModel)]="query" #queryInput="ngModel" name="query" class="block w-full px-3 py-2 focus:outline-none bg-gray-200" placeholder="Ingrese algún dato">
+          <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg ml-2">Buscar</button>
+          <button (click)="loadUsers()" type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg ml-2">Cancelar</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="bg-white shadow-md overflow-hidden rounded-lg">
+      <table class="w-full text-sm text-gray-500 border-collapse border border-black">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+          <tr>
+            <th scope="col" class="px-4 py-3">ID</th>
+            <th scope="col" class="px-4 py-3">RUT</th>
+            <th scope="col" class="px-4 py-3">Nombre</th>
+            <th scope="col" class="px-4 py-3">Fecha de nacimiento</th>
+            <th scope="col" class="px-4 py-3">Email</th>
+            <th scope="col" class="px-4 py-3">Actividad</th>
+            <th scope="col" class="px-4 py-3">Género</th>
+            <th scope="col" class="px-4 py-3">Rol</th>
+            <th scope="col" class="px-4 py-3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="userList.length === 0" class="border-b bg-gray-100">
+            <td colspan="8" class="px-4 py-3 text-center text-gray-500">No hay integrantes</td>
+          </tr>
+          <tr *ngFor="let user of userList" class="border-b hover:bg-gray-50">
+            <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap">{{ user.id }}</td>
+            <td class="px-4 py-3">{{ user.rut }}</td>
+            <td class="px-4 py-3">{{ user.name }}</td>
+            <td class="px-4 py-3">{{ formatDate(user.birthday) }}</td>
+            <td class="px-4 py-3">{{ user.email }}</td>
+            <td class="px-4 py-3">{{ user.isActive ? 'Activo' : 'Inactivo' }}</td>
+            <td class="px-4 py-3">{{ user.gender.type }}</td>
+            <td class="px-4 py-3">{{ user.role.type }}</td>
+            <td class="px-4 py-3 space-x-2">
+              <button
+                (click)="changeState(user.id, user.isActive)"
+                type="button"
+                class="py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100"
+              >
+                Actualizar estado
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

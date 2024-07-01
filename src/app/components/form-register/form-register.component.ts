@@ -14,7 +14,6 @@ export class FormRegisterComponent {
   regiterFrom!: FormGroup;
   options: String[] = ['Masculino','Femenino','Prefiero no decirlo','Otros'];
   selectedOption: String = '';
-  selectedOptionIndex: number | null = null;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -37,7 +36,7 @@ export class FormRegisterComponent {
     this.regiterFrom = this.formBuilder.group({
       Rut: ['',[Validators.required,Validators.pattern(/^\d{7,8}-[0-9kK]$/)]],
       Name: ['',[Validators.required,Validators.pattern('^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]+$')]],
-      Birthday: ['',[Validators.required,CustomValidators.validBirthday(18),Validators.minLength(8),Validators.maxLength(255)]],
+      Birthday: ['',[Validators.required,CustomValidators.validBirthday(18)]],
       Email: ['',[Validators.required,Validators.email]],
       GenderId:[null,[Validators.required]],
       Password:['',[Validators.required,Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9]+$'),Validators.minLength(8),Validators.maxLength(25)]],
@@ -48,7 +47,7 @@ export class FormRegisterComponent {
   }
   onSelectionChange() {
     // Obtener el nombre del género seleccionado
-    this.regiterFrom.patchValue({ generId: this.selectedOption });
+    this.regiterFrom.patchValue({ GenderId: this.selectedOption });
   }
   
   onSubmit():void
@@ -87,5 +86,6 @@ export class FormRegisterComponent {
       }
     });
   }
+  
   
 }
